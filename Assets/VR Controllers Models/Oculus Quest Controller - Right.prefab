@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &728485962278897823
+--- !u!1 &1916820273310556088
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5777972184206294010}
-  - component: {fileID: 3910613186206390762}
-  - component: {fileID: 1387808332245939446}
+  - component: {fileID: 4659687310927555805}
+  - component: {fileID: 2792436296457719501}
+  - component: {fileID: 272344281012233169}
   m_Layer: 0
   m_Name: r_0oculus_rifts_touch_all
   m_TagString: Untagged
@@ -18,35 +18,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5777972184206294010
+--- !u!4 &4659687310927555805
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728485962278897823}
+  m_GameObject: {fileID: 1916820273310556088}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 108325808751205561}
+  m_Father: {fileID: 1226432939622927262}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3910613186206390762
+--- !u!33 &2792436296457719501
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728485962278897823}
+  m_GameObject: {fileID: 1916820273310556088}
   m_Mesh: {fileID: -500590716326628582, guid: 115d751b184b79946acb67c5c52446a6, type: 3}
---- !u!23 &1387808332245939446
+--- !u!23 &272344281012233169
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728485962278897823}
+  m_GameObject: {fileID: 1916820273310556088}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7614095888072664981, guid: 115d751b184b79946acb67c5c52446a6, type: 3}
+  - {fileID: 2100000, guid: e46b72cb87236437f8b4f8002a586469, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &4024951872544157354
+--- !u!1 &2836831921970280845
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,26 +87,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 108325808751205561}
+  - component: {fileID: 1226432939622927262}
   m_Layer: 0
-  m_Name: Oculus Quest Controller - Right
+  m_Name: Oculus Quest Controller - Right 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &108325808751205561
+--- !u!4 &1226432939622927262
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4024951872544157354}
+  m_GameObject: {fileID: 2836831921970280845}
   m_LocalRotation: {x: -0.0050655385, y: 0.9525829, z: -0.30423328, w: -0.0015111568}
   m_LocalPosition: {x: -0.0075, y: 0.0343, z: 0.0359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5777972184206294010}
+  - {fileID: 4659687310927555805}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 35.425003, y: 179.98601, z: -0.614}

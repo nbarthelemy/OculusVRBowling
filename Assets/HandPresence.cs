@@ -5,11 +5,15 @@ using UnityEngine.XR;
 
 public class HandPresence : MonoBehaviour
 {
+    public bool showController = false;
     public InputDeviceCharacteristics controllerCharacteristics;
     public List<GameObject> controllerPrefabs;
+    public GameObject handModelPrefab;
 
     private InputDevice targetDevice;
-    private GameObject spawnedController;
+    private GameObject spawnedControllerModel;
+    private GameObject spawnedHandModel;
+    private Animator handAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +33,38 @@ public class HandPresence : MonoBehaviour
             GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
             if(prefab)
             {
-                spawnedController = Instantiate(prefab, transform);
+                spawnedControllerModel = Instantiate(prefab, transform);
             }
             else
             {
                 Debug.LogError("Did not find corresponding controller model: " + targetDevice.name);
-                spawnedController = Instantiate(controllerPrefabs[0], transform);
+                spawnedControllerModel = Instantiate(controllerPrefabs[0], transform);
             }
+
+            spawnedHandModel = Instantiate(handModelPrefab, transform);
+            handAnimator = spawnedHandModel.GetComponent<Animator>();
         }
+    }
+
+    void UpdateHandAnimation()
+    {
+        if(targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
+        {
+            handAnimator.SetFloat("Trigger", triggerValue);
+        }
+        else
+        {
+            handAnimator.SetFloat("Trigger", 0);
+        }
+
+        if(targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
+        {
+            handAnimator.SetFloat("Grip", gripValue);
+        }
+        else
+        {
+            handAnimator.SetFloat("Grip", 0);
+        }        
     }
 
     // Update is called once per frame
@@ -49,6 +77,19 @@ public class HandPresence : MonoBehaviour
             triggerValue > 0.1f) Debug.Log("Trigger pressed " + triggerValue);
 
         if(targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && 
-            primary2DAxisValue != Vector2.zero) Debug.Log("Primary touchpad " + primary2DAxisValue); 
+            primary2DAxisValue != Vector2.zero) Debug.Log("Primary touchpad " + primary2DAxisValue);
+
+        if(showController)
+        {
+            spawnedHandModel.SetActive(false);
+            spawnedControllerModel.SetActive(true);
+        }
+        else
+        {
+            spawnedHandModel.SetActive(true);
+            spawnedControllerModel.SetActive(false);
+
+            UpdateHandAnimation();
+        }
     }
 }
